@@ -4,7 +4,7 @@
 
 package org.example.app
 
-import org.example.library.SharedFactory
+import com.makediff.library.SharedFactory
 
 object AppComponent {
     lateinit var factory: SharedFactory

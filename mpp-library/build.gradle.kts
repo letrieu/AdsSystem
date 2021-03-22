@@ -38,7 +38,7 @@ dependencies {
 }
 
 multiplatformResources {
-    multiplatformResourcesPackage = "org.example.library"
+    multiplatformResourcesPackage = "com.makediff.library"
 }
 
 framework {

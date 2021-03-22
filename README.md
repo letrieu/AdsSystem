@@ -76,9 +76,9 @@ iOS - run `pod install` in directory `ios-app`. Then open `ios-app/ios-app.xcwor
 ### Setup your own ApplicationId
 
 *Just like in other native apps*  
-In `android-app/build.gradle.kts` change `org.example.app` in the following line:
+In `android-app/build.gradle.kts` change `com.makediff.app` in the following line:
 ```kotlin
-applicationId = "org.example.app"
+applicationId = "com.makediff.app"
 ```
 In Xcode project settings change `Bundle Identifier`.
 

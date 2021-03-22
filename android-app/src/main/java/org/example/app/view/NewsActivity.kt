@@ -12,8 +12,8 @@ import org.example.app.AppComponent
 import org.example.app.BR
 import org.example.app.R
 import org.example.app.databinding.ActivityNewsBinding
-import org.example.library.domain.entity.News
-import org.example.library.feature.list.presentation.ListViewModel
+import com.makediff.library.domain.entity.News
+import com.makediff.library.feature.list.presentation.ListViewModel
 
 // MvvmActivity for simplify creation of MVVM screen with https://github.com/icerockdev/moko-mvvm
 class NewsActivity : MvvmActivity<ActivityNewsBinding, ListViewModel<News>>() {

@@ -7,7 +7,7 @@ package org.example.app.units
 import dev.icerock.moko.resources.desc.StringDesc
 import dev.icerock.moko.units.TableUnitItem
 import org.example.app.TileNews
-import org.example.library.SharedFactory
+import com.makediff.library.SharedFactory
 
 class NewsListUnitsFactory : SharedFactory.NewsUnitsFactory {
     override fun createNewsTile(

@@ -13,7 +13,7 @@ import org.example.app.AppComponent
 import org.example.app.BR
 import org.example.app.R
 import org.example.app.databinding.ActivityConfigBinding
-import org.example.library.feature.config.presentation.ConfigViewModel
+import com.makediff.library.feature.config.presentation.ConfigViewModel
 
 // MvvmEventsActivity for simplify creation of MVVM screen with https://github.com/icerockdev/moko-mvvm
 class ConfigActivity :

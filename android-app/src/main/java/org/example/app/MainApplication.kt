@@ -9,7 +9,7 @@ import android.content.Context
 import com.github.aakira.napier.DebugAntilog
 import com.russhwolf.settings.AndroidSettings
 import org.example.app.units.NewsListUnitsFactory
-import org.example.library.SharedFactory
+import com.makediff.library.SharedFactory
 
 class MainApplication : Application() {
     override fun onCreate() {
