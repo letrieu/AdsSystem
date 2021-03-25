@@ -34,6 +34,6 @@ class ConfigActivity :
 
     // route called by EventsDispatcher from ViewModel (https://github.com/icerockdev/moko-mvvm)
     override fun routeToNews() {
-        Intent(this, NewsActivity::class.java).also { startActivity(it) }
+
     }
 }

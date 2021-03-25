@@ -52,7 +52,6 @@ object Deps {
         val kotlinMultiplatform = GradlePlugin(id = "org.jetbrains.kotlin.multiplatform")
         val kotlinKapt = GradlePlugin(id = "kotlin-kapt")
         val kotlinAndroid = GradlePlugin(id = "kotlin-android")
-        val kotlinAndroidExtensions = GradlePlugin(id = "kotlin-android-extensions")
         val kotlinSerialization = GradlePlugin(
             id = "org.jetbrains.kotlin.plugin.serialization",
             module = "org.jetbrains.kotlin:kotlin-serialization:$kotlinxSerializationPluginVersion"

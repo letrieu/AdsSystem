@@ -13,7 +13,6 @@ import dev.icerock.moko.resources.desc.StringDesc
 import dev.icerock.moko.resources.desc.desc
 import dev.icerock.moko.units.TableUnitItem
 import com.makediff.library.domain.di.DomainFactory
-import com.makediff.library.domain.entity.News
 import com.makediff.library.feature.config.di.ConfigFactory
 import com.makediff.library.feature.config.model.ConfigStore
 import com.makediff.library.feature.config.presentation.ConfigViewModel
@@ -25,32 +24,32 @@ class SharedFactory(
     settings: Settings,
     antilog: Antilog,
     baseUrl: String,
-    newsUnitsFactory: NewsUnitsFactory
+//    newsUnitsFactory: NewsUnitsFactory
 ) {
     private val domainFactory = DomainFactory(
         settings = settings,
         baseUrl = baseUrl
     )
 
-    val newsFactory: ListFactory<News> = ListFactory(
-        listSource = object : ListSource<News> {
-            override suspend fun getList(): List<News> {
-                return domainFactory.newsRepository.getNewsList()
-            }
-        },
-        strings = object : ListViewModel.Strings {
-            override val unknownError: StringResource = MR.strings.unknown_error
-        },
-        unitsFactory = object : ListViewModel.UnitsFactory<News> {
-            override fun createTile(data: News): TableUnitItem {
-                return newsUnitsFactory.createNewsTile(
-                    id = data.id.toLong(),
-                    title = data.fullName.orEmpty(),
-                    description = data.description?.desc() ?: MR.strings.no_description.desc()
-                )
-            }
-        }
-    )
+//    val newsFactory: ListFactory<News> = ListFactory(
+//        listSource = object : ListSource<News> {
+//            override suspend fun getList(): List<News> {
+//                return domainFactory.newsRepository.getNewsList()
+//            }
+//        },
+//        strings = object : ListViewModel.Strings {
+//            override val unknownError: StringResource = MR.strings.unknown_error
+//        },
+//        unitsFactory = object : ListViewModel.UnitsFactory<News> {
+//            override fun createTile(data: News): TableUnitItem {
+//                return newsUnitsFactory.createNewsTile(
+//                    id = data.id.toLong(),
+//                    title = data.fullName.orEmpty(),
+//                    description = data.description?.desc() ?: MR.strings.no_description.desc()
+//                )
+//            }
+//        }
+//    )
 
     val configFactory = ConfigFactory(
         configStore = object : ConfigStore {
@@ -94,11 +93,11 @@ class SharedFactory(
         Napier.base(antilog)
     }
 
-    interface NewsUnitsFactory {
-        fun createNewsTile(
-            id: Long,
-            title: String,
-            description: StringDesc
-        ): TableUnitItem
-    }
+//    interface NewsUnitsFactory {
+//        fun createNewsTile(
+//            id: Long,
+//            title: String,
+//            description: StringDesc
+//        ): TableUnitItem
+//    }
 }

@@ -11,7 +11,6 @@ import dev.icerock.moko.network.exceptionfactory.parser.ErrorExceptionParser
 import dev.icerock.moko.network.exceptionfactory.parser.ValidationExceptionParser
 import dev.icerock.moko.network.features.ExceptionFeature
 import dev.icerock.moko.network.features.TokenFeature
-import dev.icerock.moko.network.generated.apis.NewsApi
 import io.ktor.client.HttpClient
 import io.ktor.client.features.logging.LogLevel
 import io.ktor.client.features.logging.Logger
@@ -19,8 +18,8 @@ import io.ktor.client.features.logging.Logging
 import io.ktor.http.HttpStatusCode
 import kotlinx.serialization.json.Json
 import com.makediff.library.domain.repository.ConfigRepository
-import com.makediff.library.domain.repository.NewsRepository
 import com.makediff.library.domain.storage.KeyValueStorage
+import dev.icerock.moko.network.generated.apis.UserApi
 
 class DomainFactory(
     private val settings: Settings,
@@ -64,20 +63,36 @@ class DomainFactory(
         }
     }
 
-    private val newsApi: NewsApi by lazy {
-        NewsApi(
+    private val userApi: UserApi by lazy {
+        UserApi(
             basePath = baseUrl,
             httpClient = httpClient,
             json = json
         )
     }
 
-    val newsRepository: NewsRepository by lazy {
-        NewsRepository(
-            newsApi = newsApi,
-            keyValueStorage = keyValueStorage
+    private val postApi: UserApi by lazy {
+        UserApi(
+            basePath = baseUrl,
+            httpClient = httpClient,
+            json = json
         )
     }
+
+    private val shopApi: UserApi by lazy {
+        UserApi(
+            basePath = baseUrl,
+            httpClient = httpClient,
+            json = json
+        )
+    }
+//
+//    val newsRepository: NewsRepository by lazy {
+//        NewsRepository(
+//            newsApi = newsApi,
+//            keyValueStorage = keyValueStorage
+//        )
+//    }
 
     val configRepository: ConfigRepository by lazy {
         ConfigRepository(keyValueStorage = keyValueStorage)

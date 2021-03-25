@@ -8,7 +8,6 @@ import android.app.Application
 import android.content.Context
 import com.github.aakira.napier.DebugAntilog
 import com.russhwolf.settings.AndroidSettings
-import org.example.app.units.NewsListUnitsFactory
 import com.makediff.library.SharedFactory
 
 class MainApplication : Application() {
@@ -25,8 +24,7 @@ class MainApplication : Application() {
         AppComponent.factory = SharedFactory(
             baseUrl = BuildConfig.BASE_URL,
             settings = AndroidSettings(getSharedPreferences("app", Context.MODE_PRIVATE)),
-            antilog = DebugAntilog(),
-            newsUnitsFactory = NewsListUnitsFactory()
+            antilog = DebugAntilog()
         )
     }
 }
