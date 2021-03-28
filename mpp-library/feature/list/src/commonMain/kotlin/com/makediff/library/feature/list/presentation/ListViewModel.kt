@@ -19,6 +19,7 @@ import dev.icerock.moko.units.TableUnitItem
 import kotlinx.coroutines.launch
 import com.makediff.library.feature.list.model.ListSource
 import dev.icerock.moko.mvvm.asState
+import dev.icerock.moko.units.CollectionUnitItem
 
 class ListViewModel<T>(
     private val listSource: ListSource<T>,
@@ -29,7 +30,7 @@ class ListViewModel<T>(
     private val _state: MutableLiveData<State<List<T>, Throwable>> =
         MutableLiveData(initialValue = State.Loading())
 
-    val state: LiveData<State<List<TableUnitItem>, StringDesc>> = _state
+    val state: LiveData<State<List<CollectionUnitItem>, StringDesc>> = _state
         .dataTransform {
             map { news ->
                 news.map { unitsFactory.createTile(it) }
@@ -79,7 +80,7 @@ class ListViewModel<T>(
     }
 
     interface UnitsFactory<T> {
-        fun createTile(data: T): TableUnitItem
+        fun createTile(data: T): CollectionUnitItem
     }
 
     interface Strings {

@@ -18,7 +18,10 @@ import io.ktor.client.features.logging.Logging
 import io.ktor.http.HttpStatusCode
 import kotlinx.serialization.json.Json
 import com.makediff.library.domain.repository.ConfigRepository
+import com.makediff.library.domain.repository.PostRepository
 import com.makediff.library.domain.storage.KeyValueStorage
+import dev.icerock.moko.network.generated.apis.PostApi
+import dev.icerock.moko.network.generated.apis.ShopApi
 import dev.icerock.moko.network.generated.apis.UserApi
 
 class DomainFactory(
@@ -71,20 +74,25 @@ class DomainFactory(
         )
     }
 
-    private val postApi: UserApi by lazy {
-        UserApi(
+    private val postApi: PostApi by lazy {
+        PostApi(
             basePath = baseUrl,
             httpClient = httpClient,
             json = json
         )
     }
 
-    private val shopApi: UserApi by lazy {
-        UserApi(
+    private val shopApi: ShopApi by lazy {
+        ShopApi(
             basePath = baseUrl,
             httpClient = httpClient,
             json = json
         )
+    }
+
+
+    val postRepository: PostRepository by lazy {
+        PostRepository(postApi = postApi)
     }
 //
 //    val newsRepository: NewsRepository by lazy {

@@ -8,6 +8,7 @@ plugins {
     plugin(Deps.Plugins.kotlinSerialization)
     plugin(Deps.Plugins.mobileMultiplatform)
     plugin(Deps.Plugins.mokoNetwork)
+    plugin(Deps.Plugins.kotlinParcelize)
 }
 
 dependencies {

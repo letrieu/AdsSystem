@@ -24,7 +24,8 @@ class MainApplication : Application() {
         AppComponent.factory = SharedFactory(
             baseUrl = BuildConfig.BASE_URL,
             settings = AndroidSettings(getSharedPreferences("app", Context.MODE_PRIVATE)),
-            antilog = DebugAntilog()
+            antilog = DebugAntilog(),
+            postCategoryUnitsFactory = null
         )
     }
 }

@@ -40,6 +40,7 @@ class ConfigViewController: UIViewController {
 extension ConfigViewController: ConfigViewModelEventsListener {
     // callsed from ViewModel by EventsDispatcher - see https://github.com/icerockdev/moko-mvvm
     func routeToNews() {
-        performSegue(withIdentifier: "routeToNews", sender: nil)
+        let vc = HomeViewController()
+        self.present(vc, animated: true, completion: nil)
     }
 }

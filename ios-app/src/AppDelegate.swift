@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 IceRock MAG Inc. Use of this source code is governed by the Apache 2.0 license.
+ * Copyright © 2021 TrieuLD. All rights reserved.
  */
 
 import UIKit
@@ -22,8 +22,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         AppComponent.factory = SharedFactory(
             settings: AppleSettings(delegate: UserDefaults.standard),
             antilog: DebugAntilog(defaultTag: "MPP"),
-            baseUrl: "https://newsapi.org/v2/",
-            newsUnitsFactory: NewsListUnitsFactory()
+            baseUrl: "https://makediff.herokuapp.com",
+            postCategoryUnitsFactory: PostCateListUnitsFactory()
         )
         return true
     }

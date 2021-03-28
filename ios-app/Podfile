@@ -30,4 +30,9 @@ target 'ios-app' do
     :git => 'https://github.com/icerockdev/moko-mvvm.git', :tag => 'release/0.8.1'
   pod 'MultiPlatformLibraryUnits/Core',
     :git => 'https://github.com/icerockdev/moko-units.git', :tag => 'release/0.4.1'
+    
+    
+  pod 'SkeletonView'
+  pod 'Nuke', '~> 7.4'
+  
 end

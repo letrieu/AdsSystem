@@ -15,8 +15,8 @@ class ShopRepository internal constructor(
 //            pageSize = pageSize
 //        ).articles.map { it.toDomain() }
 //    }
-    
-    suspend fun getShopList(): List<ShopListType> {
-        return shopApi.shopCategoryList()
-    }
+
+//    suspend fun getShopCategoryList(): List<ShopListType> {
+//        return shopApi.shopCategoryList()
+//    }
 }

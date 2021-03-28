@@ -57,6 +57,8 @@ object Deps {
             module = "org.jetbrains.kotlin:kotlin-serialization:$kotlinxSerializationPluginVersion"
         )
 
+        val kotlinParcelize = GradlePlugin(id = "kotlin-parcelize")
+
         val mobileMultiplatform = GradlePlugin(id = "dev.icerock.mobile.multiplatform")
         val iosFramework = GradlePlugin(id = "dev.icerock.mobile.multiplatform.ios-framework")
 
