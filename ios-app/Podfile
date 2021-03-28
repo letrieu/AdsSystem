@@ -34,5 +34,6 @@ target 'ios-app' do
     
   pod 'SkeletonView'
   pod 'Nuke', '~> 7.4'
+  pod 'HGPlaceholders'
   
 end

@@ -15,7 +15,6 @@ import dev.icerock.moko.mvvm.viewmodel.ViewModel
 import dev.icerock.moko.resources.StringResource
 import dev.icerock.moko.resources.desc.StringDesc
 import dev.icerock.moko.resources.desc.desc
-import dev.icerock.moko.units.TableUnitItem
 import kotlinx.coroutines.launch
 import com.makediff.library.feature.list.model.ListSource
 import dev.icerock.moko.mvvm.asState

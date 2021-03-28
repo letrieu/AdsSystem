@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.4.0)
   - AlamofireImage (4.1.0):
     - Alamofire (~> 5.1)
+  - HGPlaceholders (0.5.0)
   - MultiPlatformLibrary (0.1.0)
   - MultiPlatformLibraryMvvm/AlamofireImage (0.8.1):
     - AlamofireImage (~> 4.1.0)
@@ -18,6 +19,7 @@ PODS:
   - SkyFloatingLabelTextField (3.8.0)
 
 DEPENDENCIES:
+  - HGPlaceholders
   - MultiPlatformLibrary (from `../mpp-library`)
   - MultiPlatformLibraryMvvm/AlamofireImage (from `https://github.com/icerockdev/moko-mvvm.git`, tag `release/0.8.1`)
   - MultiPlatformLibraryMvvm/Core (from `https://github.com/icerockdev/moko-mvvm.git`, tag `release/0.8.1`)
@@ -30,6 +32,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - HGPlaceholders
     - Nuke
     - SkeletonView
     - SkyFloatingLabelTextField
@@ -55,13 +58,14 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
-  MultiPlatformLibrary: 17d6f2734e9e3594f158c753a7b3163924927bf5
+  HGPlaceholders: cbf8caed8360fc2ab5e8a4610cce61f76fbd2c37
+  MultiPlatformLibrary: d65a3aa62861045cb47c667e1d7a4ae455175c09
   MultiPlatformLibraryMvvm: 75aa7149b3849f05dfbfa605e3694f5412134ef5
   MultiPlatformLibraryUnits: 0d2efb66522f63a8b38d5639d329aeb70cd4e9ba
   Nuke: 44130e95e09463f8773ae4b96b90de1eba6b3350
   SkeletonView: cc84ce90a804dd0dd7198dd802833411c8a64eaf
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
 
-PODFILE CHECKSUM: fecb91c419146420ed288ecfb81089e5359b4947
+PODFILE CHECKSUM: dd5e4991a10bf9b9e205f65dc7d2864b65838f85
 
 COCOAPODS: 1.10.1

@@ -186,6 +186,10 @@ object Deps {
                 name = ":mpp-library:feature:list",
                 exported = true
             )
+            val tabbar = MultiPlatformModule(
+                name = ":mpp-library:feature:tabbar",
+                exported = true
+            )
         }
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 import MultiPlatformLibrary
 import MultiPlatformLibraryMvvm
 import MultiPlatformLibraryUnits
+import HGPlaceholders
 
 struct HomeUX {
     static var numberOfItemsPerRow: CGFloat {
@@ -30,48 +31,23 @@ struct HomeUX {
     }
 }
 
-class HomeViewController: UIViewController {
+class HomeViewController: TLViewController {
     
-    var collectionView: UICollectionView!
+    var collectionView: CollectionView!
     
     private var viewModel: ListViewModel<PostCate>!
     private var dataSource: CollectionUnitsSource!
+    
+    deinit {
+        viewModel.onCleared()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.gray
-        
-        self.title = "Home"
-        
-        let collectionViewLayout = UICollectionViewFlowLayout()
-        collectionViewLayout.minimumLineSpacing = 0
-        collectionViewLayout.minimumInteritemSpacing = 0
-        collectionViewLayout.scrollDirection = .vertical
-
-        collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: collectionViewLayout)
-        collectionView.register(PostCateCell.self, forCellWithReuseIdentifier: PostCateCell.reusableIdentifier())
-        collectionView.backgroundColor = .clear
-        collectionView.isSkeletonable = true
-        collectionView.delegate = self
-        self.view.addSubview(collectionView)
-        
+        self.setupNavigationBar()
+        self.setupUI()
         self.setupViewModel()
-    }
-    
-    func setupViewModel() {
-        viewModel = AppComponent.factory.postFactory.createListViewModel()
-        dataSource = CollectionUnitsSourceKt.default(for: collectionView)
-        
-        // manual bind to livedata, see https://github.com/icerockdev/moko-mvvm
-        viewModel.state.data().addObserver { [weak self] itemsObject in
-            guard let items = itemsObject as? [CollectionUnitItem] else { return }
-            
-            self?.dataSource.unitItems = items
-            self?.collectionView.reloadData()
-        }
-        
-//        errorView.bindVisibility(liveData: viewModel.state.isErrorState())
     }
     
     override func viewDidLayoutSubviews() {
@@ -83,6 +59,52 @@ class HomeViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         
         collectionView?.collectionViewLayout.invalidateLayout()
+    }
+    
+    
+    func setupNavigationBar() {
+        let userItem = NavigationHelper.createBarButtonItem(withImage: UIImage(named: "user"))
+        let addItem = NavigationHelper.createBarButtonItem(withImage:UIImage(named: "plus-symbol"))
+        let searchItem = NavigationHelper.createBarButtonItem(withImage: UIImage(named: "magnifying-glass"))
+        
+        self.navigationItem.leftBarButtonItem = userItem
+        self.navigationItem.rightBarButtonItems = [addItem, searchItem]
+    }
+    
+    func setupUI() {
+        self.title = "Home"
+        
+        self.view.backgroundColor = ThemeManager.instance.current.background
+        
+        let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.minimumLineSpacing = 0
+        collectionViewLayout.minimumInteritemSpacing = 0
+        collectionViewLayout.scrollDirection = .vertical
+
+        collectionView = CollectionView(frame: self.view.bounds, collectionViewLayout: collectionViewLayout)
+        collectionView.register(PostCateCell.self, forCellWithReuseIdentifier: PostCateCell.reusableIdentifier())
+        collectionView.backgroundColor = .clear
+        collectionView.isSkeletonable = true
+        collectionView.delegate = self
+        self.view.addSubview(collectionView)
+        
+//        collectionView
+    }
+    
+    func setupViewModel() {
+        viewModel = AppComponent.factory.postFactory.createListViewModel()
+        dataSource = CollectionUnitsSourceKt.default(for: collectionView)
+        
+        self.observerPlaceHolder(for: collectionView, with: viewModel)
+        
+        viewModel.state.data().addObserver { [weak self] itemsObject in
+            guard let items = itemsObject as? [CollectionUnitItem] else { return }
+            
+            self?.dataSource.unitItems = items
+            self?.collectionView.reloadData()
+        }
+        
+//        errorView.bindVisibility(liveData: viewModel.state.isErrorState())
     }
 }
 

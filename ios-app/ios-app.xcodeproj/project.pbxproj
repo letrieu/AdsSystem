@@ -27,6 +27,10 @@
 		84F4BC54261023C600BBE182 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4BC51261023C600BBE182 /* DarkTheme.swift */; };
 		84F4BC55261023C600BBE182 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4BC52261023C600BBE182 /* ThemeManager.swift */; };
 		84F4BC58261023FE00BBE182 /* NotificationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4BC57261023FE00BBE182 /* NotificationConstants.swift */; };
+		84F4BC5F26106B4400BBE182 /* ASTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4BC5E26106B4400BBE182 /* ASTabBarViewController.swift */; };
+		84F4BC6C26106E9A00BBE182 /* TLNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4BC6B26106E9A00BBE182 /* TLNavigationController.swift */; };
+		84F4BC6F26106F3B00BBE182 /* TLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4BC6E26106F3B00BBE182 /* TLViewController.swift */; };
+		84F4BC722610705700BBE182 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4BC712610705700BBE182 /* NavigationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		84F4BC51261023C600BBE182 /* DarkTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		84F4BC52261023C600BBE182 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		84F4BC57261023FE00BBE182 /* NotificationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationConstants.swift; sourceTree = "<group>"; };
+		84F4BC5E26106B4400BBE182 /* ASTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTabBarViewController.swift; sourceTree = "<group>"; };
+		84F4BC6B26106E9A00BBE182 /* TLNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLNavigationController.swift; sourceTree = "<group>"; };
+		84F4BC6E26106F3B00BBE182 /* TLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLViewController.swift; sourceTree = "<group>"; };
+		84F4BC712610705700BBE182 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		A644D2F1C5377C40A53FCD6A /* Pods-TestProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProj.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestProj/Pods-TestProj.release.xcconfig"; sourceTree = "<group>"; };
 		C83C539745B5CCD484267966 /* Pods-ios-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-app/Pods-ios-app.release.xcconfig"; sourceTree = "<group>"; };
 		DFBDF7D3559D080FDCA444A6 /* Pods-TestProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestProj/Pods-TestProj.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +117,9 @@
 			children = (
 				4539A7B42354376F0081362B /* ConfigViewController.swift */,
 				84F4BC0F260F86EF00BBE182 /* HomeViewController.swift */,
+				84F4BC5E26106B4400BBE182 /* ASTabBarViewController.swift */,
+				84F4BC6B26106E9A00BBE182 /* TLNavigationController.swift */,
+				84F4BC6E26106F3B00BBE182 /* TLViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -154,6 +165,7 @@
 			children = (
 				84F4BC352610213A00BBE182 /* UICommonValue.swift */,
 				84F4BC57261023FE00BBE182 /* NotificationConstants.swift */,
+				84F4BC712610705700BBE182 /* NavigationHelper.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -301,12 +313,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F4BC6F26106F3B00BBE182 /* TLViewController.swift in Sources */,
 				84F4BC43261021CF00BBE182 /* UIEdgeInsets+Extensions.swift in Sources */,
+				84F4BC6C26106E9A00BBE182 /* TLNavigationController.swift in Sources */,
 				84F4BC32260F8DAF00BBE182 /* TLCollectionViewCellUnit.swift in Sources */,
 				84F4BC55261023C600BBE182 /* ThemeManager.swift in Sources */,
+				84F4BC5F26106B4400BBE182 /* ASTabBarViewController.swift in Sources */,
 				45F47922219463C7003D25FA /* AppDelegate.swift in Sources */,
 				84F4BC3D261021AE00BBE182 /* UIView+Extensions.swift in Sources */,
 				84F4BC53261023C600BBE182 /* Theme.swift in Sources */,
+				84F4BC722610705700BBE182 /* NavigationHelper.swift in Sources */,
 				84F4BC54261023C600BBE182 /* DarkTheme.swift in Sources */,
 				84F4BC362610213A00BBE182 /* UICommonValue.swift in Sources */,
 				84F4BC3A2610219C00BBE182 /* CALayer+Extensions.swift in Sources */,

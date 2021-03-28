@@ -40,7 +40,8 @@ class ConfigViewController: UIViewController {
 extension ConfigViewController: ConfigViewModelEventsListener {
     // callsed from ViewModel by EventsDispatcher - see https://github.com/icerockdev/moko-mvvm
     func routeToNews() {
-        let vc = HomeViewController()
+        let vc = ASTabBarViewController()
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
 }
